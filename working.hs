@@ -44,24 +44,31 @@ permutationsN stringToPermutate = insertionSort(doPerm stringToPermutate [])
 
 
 
-sortLexographic :: [Int] -> [[Char]]
+sortLexographic :: [Int] -> [Char]
 sortLexographic [n, m] =
   let
     numbers = convertDigits m
     numbers1 = permutationsN numbers
+    numbers2 = numbers1 !! (n-1)
    
   in
-    numbers1
+    numbers2
 
 main :: IO ()
 main = do
-  print (sortLexographic [1, 2])
+  print (sortLexographic [1, 5])
+  print (sortLexographic [2, 5])
+  print (sortLexographic [3, 5])
+  print (sortLexographic [4, 5])
+  print (sortLexographic [5, 5])
+  print (sortLexographic [6, 5])
+  print (sortLexographic [7, 5])
+
 
 
 
 
  
-
 
 
 
